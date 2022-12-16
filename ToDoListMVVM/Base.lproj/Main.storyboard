@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iBB-SR-JQz">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Item-->
+        <scene sceneID="019-Ck-ekL">
+            <objects>
+                <viewController id="BFj-j1-RB1" customClass="ViewController" customModule="ToDoListMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C4M-8b-taS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-zS-caf">
+                                <rect key="frame" x="24" y="385" width="342" height="56"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="8Ds-AU-qoR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="BFj-j1-RB1" eventType="touchUpInside" id="i68-it-cG6"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new item to the ToDoList" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9hN-tu-tbi">
+                                <rect key="frame" x="24" y="297" width="342" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tEt-0E-YnS"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layeer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="psC-qO-cOz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4n6-zS-caf" firstAttribute="leading" secondItem="psC-qO-cOz" secondAttribute="leading" constant="24" id="9Es-12-63t"/>
+                            <constraint firstItem="psC-qO-cOz" firstAttribute="trailing" secondItem="9hN-tu-tbi" secondAttribute="trailing" constant="24" id="NxD-Jv-0qE"/>
+                            <constraint firstItem="9hN-tu-tbi" firstAttribute="leading" secondItem="psC-qO-cOz" secondAttribute="leading" constant="24" id="Vif-aa-Lhv"/>
+                            <constraint firstItem="9hN-tu-tbi" firstAttribute="top" secondItem="psC-qO-cOz" secondAttribute="top" constant="250" id="dOy-hL-RY5"/>
+                            <constraint firstItem="psC-qO-cOz" firstAttribute="trailing" secondItem="4n6-zS-caf" secondAttribute="trailing" constant="24" id="hJi-cB-e79"/>
+                            <constraint firstItem="4n6-zS-caf" firstAttribute="top" secondItem="9hN-tu-tbi" secondAttribute="bottom" constant="32" id="ra3-qj-Y9O"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add Item" image="plus" catalog="system" id="LP4-Nj-Fli"/>
+                    <connections>
+                        <outlet property="noteTF" destination="9hN-tu-tbi" id="DoC-Th-N6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIZ-mm-Cbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.6153846153845" y="403.79146919431275"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8A1-Hb-2Oy">
+            <objects>
+                <tabBarController id="iBB-SR-JQz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oTF-fV-agU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BFj-j1-RB1" kind="relationship" relationship="viewControllers" id="Ueu-G2-ovM"/>
+                        <segue destination="ers-3D-eVf" kind="relationship" relationship="viewControllers" id="4jw-xA-hVL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhI-cT-R1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="100"/>
+        </scene>
+        <!--ToDoList-->
+        <scene sceneID="o9T-1C-5hk">
+            <objects>
+                <tableViewController id="ers-3D-eVf" customClass="TableViewController" customModule="ToDoListMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lmp-Bv-xsi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="gfg-70-7v1" style="IBUITableViewCellStyleDefault" id="RJj-Eu-UVo">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RJj-Eu-UVo" id="uvK-V3-5i2">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfg-70-7v1">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ers-3D-eVf" id="4cn-yF-YED"/>
+                            <outlet property="delegate" destination="ers-3D-eVf" id="PcT-Ni-EZg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="ToDoList" image="list.dash" catalog="system" id="I91-RW-6LL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfO-eB-KGy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="-247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
